@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>
+        下载译达通客户端，支持Windows、macOS平台，实时双向翻译，精准好用的社交媒体翻译软件，出海首选，打破语言障碍。WhatsApp翻译，Telegram翻译，Line翻译
+    </title>
+    <meta name="description"
+        content="下载译达通翻译客户端，支持Windows、macOS平台，提供精准的实时双向翻译，支持200+语种。聚合主流社交软件，Whatsapp,Telegram,Line,Zalo,Facebook,Messenger,Instagram,Twitter,Tiktok,Tinder,Discord,Google Voice,Skype等等，一对一网页客服支持，您的首选翻译软件。" />
+    <meta name="keywords"
+        content="译达通 下载,译达通 客户端,edatone,译达通 客户端,,译达通翻译,AI翻译算法,应用多开,Telegram聊天自动翻译,Skype聊天自动翻译,留学生必备应用,跨境电商,跨境聊天,Messenger聊天自动翻译,Zalo聊天自动翻译,Line聊天自动翻译,Instagram聊天自动翻译,WhatsApp聊天自动翻译,多语言翻译,多合一聚合便捷聊天,Telegram双向翻译,Skype双向翻译,Messenger双向翻译,Zalo双向翻译,Line双向翻译,Instagram双向翻译,WhatsApp双向翻译,多语种翻译,聚合社交应用,Telegram实时翻译,Skype实时翻译,Messenger实时翻译,Zalo实时翻译,Line实时翻译,Instagram实时翻译,WhatsApp实时翻译,实时翻译,沟通无障碍,主流软件集成,Telegram多语言翻译,Skype多语言翻译,Messenger多语言翻译,Zalo多语言翻译,Line多语言翻译,Instagram多语言翻译,WhatsApp多语言翻译,双向翻译,多账户沙盒多开,跨境翻译,whatsapp,telegram,line,zalo,facebook,messenger,instagram,twitter,tiktok,tinder,Discord,google voice,skype,pingme,badoo,bumble,quora,textnow,textme,海外党,海外华人,出海必备" />
+    <meta name="og:title" content="下载译达通双向翻译软件" />
+    <meta name="og:description"
+        content="下载译达通翻译客户端，支持Windows、macOS平台，提供精准的实时双向翻译，支持200+语种。聚合主流社交软件，Whatsapp,Telegram,Line,Zalo,Facebook,Messenger,Instagram,Twitter,Tiktok,Tinder,Discord,Google Voice,Skype等等，一对一网页客服支持，您的首选翻译软件。" />
+    <meta name="og:image" content="static/images/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/icon.ico" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/iconfont/iconfont.css" />
+    <link rel="stylesheet" href="static/css/animate.min.css" />
+    <link rel="stylesheet" href="static/css/meanmenu.css" />
+    <link rel="stylesheet" href="static/css/slick.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/custom.css" />
+    <style type="text/css">
+        .download-card {
+            min-height: 260px;
+            padding-bottom: 28px;
+        }
+
+        .download-card-tip {
+            margin: 16px 24px 0;
+            min-height: 22px;
+            color: #E6A23C;
+            font-style: italic;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .download-helper-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: calc(100% - 48px);
+            margin: 12px 24px 0;
+            padding: 12px 14px;
+            border: 1px solid rgba(98, 106, 239, 0.16);
+            border-radius: 12px;
+            background: rgba(98, 106, 239, 0.08);
+            font: inherit;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .download-helper-card:hover {
+            background: rgba(98, 106, 239, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .download-helper-card__title {
+            color: #303133;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 20px;
+        }
+
+        .download-helper-card__desc {
+            margin-top: 4px;
+            color: #7a8194;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        .download-helper-card__arrow {
+            margin-left: 12px;
+            color: #626aef;
+            font-size: 18px;
+            font-weight: 700;
+            transition: transform 0.2s ease;
+        }
+
+        .download-helper-card:hover .download-helper-card__arrow {
+            transform: translateX(2px);
+        }
+
+        /* 复刻 Element Plus 主按钮样式 */
+        .dl-btn {
+            display: inline-block;
+            width: 110px;
+            padding: 12px 0;
+            border-radius: 4px;
+            background: #409eff;
+            border: 1px solid #409eff;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background .2s, border-color .2s;
+            white-space: nowrap;
+        }
+
+        .dl-btn:hover {
+            background: #66b1ff;
+            border-color: #66b1ff;
+            color: #fff;
+        }
+
+        .dl-btn.dl-green {
+            background: #2ad363;
+            border-color: #2ad363;
+        }
+
+        .dl-btn.dl-green:hover {
+            background: #4ad57e;
+            border-color: #4ad57e;
+        }
+
+        .dl-btn .dl-rec {
+            display: block;
+            font-size: 10px;
+            font-style: italic;
+            color: #fff;
+            margin-top: 4px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 767px) {
+            .download-platform-row {
+                display: block !important;
+            }
+
+            .download-platform-col {
+                width: 100% !important;
+            }
+        }
+    </style>
+    <script>
+        // 全站统一下载入口：调用 k2 方法，跳转 qq.com（如需接入统计/埋点，在函数内补充即可）
+        function k2() {
+            window.location.href = 'https://qq.com';
+        }
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- HEADER START -->
+        <header>
+            <div id="header-sticky" class="header-area header-area-white transparent-header pb-10 fixed"
+                style="background:linear-gradient(-120deg, #5e54fd 1%, #5d45e5 100%)">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-10 d-flex align-items-center">
+                            <div class="logo">
+                                <a href="index.html"><img src="static/images/logo_dark.png" width="90" /></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-7 col-8 d-none d-md-block">
+                            <div class="f-right d-none d-sm-none d-md-block d-md-none d-lg-block" style="padding-top: 22px">
+                                <a class="btn ed-btn btn-white" href="javascript:void(0)" onclick="k2()"><i
+                                        class="iconfont icon-download"></i>立即下载</a>
+                            </div>
+                            <div class="main-menu colormenu d-block">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="download.html">客户端下载</a></li>
+                                        <li><a href="product.html">产品展示</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-2 col-md-1">
+                            <div class="side-menu-icon bar-two d-lg-none text-end">
+                                <button class="side-toggle"><i class="far fa-bars"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- HEADER END -->
+        <div class="fix">
+            <div class="side-info">
+                <button class="side-info-close"><i class="fal fa-times"></i></button>
+                <div class="side-info-content">
+                    <div class="mobile-menu"></div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-overlay"></div>
+        <main>
+            <section class="page__title fix text-center" style="min-height: 100px">
+                <div class="slider__shape">
+                    <img class="shape triangle" style="left: calc(50% - 150px)" src="static/picture/topelips.png" alt="topshape" />
+                    <img class="shape" style="left: 0; top: 400px" src="static/picture/left.png" alt="topshape" />
+                    <img class="shape dotted-square" style="top: 400px" src="static/picture/rightelips.png" alt="rightshape" />
+                    <img class="shape solid-square" src="static/picture/circleelips.png" alt="solid-square" />
+                </div>
+            </section>
+            <div class="homefeture_1 pt-50 pb-90">
+                <div class="container">
+                    <div class="App_title text-center wow fadeInUp mb-50" data-wow-delay="0.3s">
+                        <h1 class="section-title">译达通翻译客户端</h1>
+                        <p style="opacity: 0.9; font-weight: bold">
+                            <br />支持全球200多种语言，对接6大翻译渠道。一键翻译各国语言，提高沟通效率。<br /><br />支持全球主流社交软件WhatsApp、Telegram、Line、Skype、Instagram、Twitter、Facebook...
+                        </p>
+                    </div>
+                    <div class="row download-platform-row" style="display: flex; justify-content: space-around">
+                        <div class="col-xl-3 col-lg-3 col-md-3 wow fadeInLeft pointer download-platform-col"
+                            data-wow-duration="1.5s" data-wow-delay=".2s" style="width: 28%">
+                            <div class="feabox mb-30 download-card">
+                                <div class="feabox__img mb-50" style="width: 150px; height: 100px; line-height: 100px; border-radius: 10px;">
+                                    <img src="static/images/windows.png" alt="Windows版 下载" width="60" />
+                                </div>
+                                <div class="feabox__content" style="display: flex; justify-content: space-between; width: 100%; padding: 0 30px;">
+                                    <a class="dl-btn" href="javascript:void(0)" onclick="k2()">Win10 下载<span class="dl-rec">推荐</span></a>
+                                    <a class="dl-btn" href="javascript:void(0)" onclick="k2()">Win7 下载</a>
+                                </div>
+                                <div class="download-card-tip">客户端已包含Signal，可多开使用</div>
+                                <button type="button" class="download-helper-card"
+                                    onclick="alert('点击屏幕左上角 Apple 菜单，选择“关于本机”，即可查看芯片类型。M 系列芯片请选择 apple 芯片版本，Intel 处理器请选择 intel 芯片版本。')">
+                                    <div>
+                                        <div class="download-helper-card__title">如何查看芯片类型？</div>
+                                        <div class="download-helper-card__desc">Apple 菜单 &gt; 关于本机查看</div>
+                                    </div>
+                                    <div class="download-helper-card__arrow">→</div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 pointer download-platform-col" style="width: 28%">
+                            <div class="feabox clr1 mb-30 download-card">
+                                <div class="feabox__img img1 mb-50" style="width: 150px; height: 100px; line-height: 100px; border-radius: 10px;">
+                                    <img src="static/images/mac.png" alt="Mac版 下载" width="60" />
+                                </div>
+                                <div class="feabox__content" style="display: flex; justify-content: space-between; width: 100%; padding: 0 30px;">
+                                    <a class="dl-btn dl-green" href="javascript:void(0)" onclick="k2()">apple芯片</a>
+                                    <a class="dl-btn dl-green" href="javascript:void(0)" onclick="k2()">intel芯片</a>
+                                </div>
+                                <div class="download-card-tip">根据您的 Mac 芯片类型选择版本</div>
+                                <button type="button" class="download-helper-card"
+                                    onclick="alert('点击屏幕左上角 Apple 菜单，选择“关于本机”，即可查看芯片类型。M 系列芯片请选择 apple 芯片版本，Intel 处理器请选择 intel 芯片版本。')">
+                                    <div>
+                                        <div class="download-helper-card__title">如何查看芯片类型？</div>
+                                        <div class="download-helper-card__desc">Apple 菜单 &gt; 关于本机查看</div>
+                                    </div>
+                                    <div class="download-helper-card__arrow">→</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- APP DETAILS START -->
+            <div class="app_details pt-120 pb-20">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-7 col-lg-6 col-md-12">
+                            <div class="details_content pb-70">
+                                <h2 class="section-title section_title_large">
+                                    您身边的翻译专家
+                                </h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s"
+                                    data-wow-delay=".2s">
+                                    <div class="feature3">
+                                        <div class="feature3__image">
+                                            <img class="pb-30" src="static/images/feature/trans.png" alt="精准翻译" width="30" />
+                                        </div>
+                                        <div class="feature3__content">
+                                            <h4 class="content_title">精准翻译</h4>
+                                            <p>
+                                                7大主流翻译引擎, 精准的翻译使您能够快速准确地沟通。
+                                                <br />
+                                                无论是旅行、工作还是学习。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="1.5s"
+                                    data-wow-delay=".2s">
+                                    <div class="feature3 pl-40">
+                                        <div class="feature3__image febg1">
+                                            <img class="pb-30" src="static/images/feature/fast.png" alt="快速响应" width="30" />
+                                        </div>
+                                        <div class="feature3__content">
+                                            <h4 class="content_title">快速响应</h4>
+                                            <p>
+                                                分布式架构, 毫秒级延迟, 响应迅速。 <br />
+                                                流畅的用户体验让您能够轻松地与不同语言的朋友交流。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s"
+                                    data-wow-delay=".2s">
+                                    <div class="feature3">
+                                        <div class="feature3__image febg2">
+                                            <img class="pb-30" src="static/images/feature/operate.png" alt="操作便捷" width="30" />
+                                        </div>
+                                        <div class="feature3__content">
+                                            <h4 class="content_title">操作便捷</h4>
+                                            <p>
+                                                直观的界面和简单的操作, 无论您是新手还是有经验,
+                                                都能轻松上手
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="1.5s"
+                                    data-wow-delay=".2s">
+                                    <div class="feature3 pl-40">
+                                        <div class="feature3__image febg3">
+                                            <img class="pb-30" src="static/images/feature/safety.png" alt="安全可靠" width="30" />
+                                        </div>
+                                        <div class="feature3__content">
+                                            <h4 class="content_title">安全可靠</h4>
+                                            <p>
+                                                采用了先进的加密技术和严格的隐私政策,
+                                                保护用户的隐私和数据安全。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-6 col-md-12 d-md-none d-lg-block d-sm-none d-md-block d-none d-sm-block">
+                            <div class="details_image wow zoomIn" data-wow-duration="1.5s" data-wow-delay=".2s">
+                                <img src="static/images/download_03.jpeg" alt="blogshape" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- APP DETAILS END -->
+        </main>
+        <footer>
+            <div class="footer-area padding-remove footertext-hover">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="footer_logo wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s"
+                            style="text-align: center;">
+                            <img src="static/images/logo.png" alt="logo" width="90" />
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom pt-60 pb-15">
+                    <div class="container tp-border">
+                        <div class="footer_links">
+                            <a href="terms.html">用户条款</a>
+                            <span class="divider">|</span>
+                            <a href="privacy.html">隐私政策</a>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="copyright_text pt-20">
+                                <span class="copyright">Copyright &copy; 2026.edatone.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="fixed-box" style="height: auto;">
+            <div class="fixed-item" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+                <img src="static/images/top.png" width="36" height="36" class="service-icon" />
+                <div class="title">回到顶部</div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/jquery-1.12.4.min.js"></script>
+    <script src="static/js/jquery.meanmenu.min.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- Cookie 使用说明 -->
+    <div class="cookie-consent" id="cookie-consent" style="display:none;">
+        <div class="cookie-consent__title">Cookie 使用说明</div>
+        <div class="cookie-consent__text">
+            我们使用 Cookie 及类似技术来提升您的浏览体验、分析网站流量并支持广告投放与效果衡量。这些 Cookie 不会收集您的个人身份信息。点击「接受」即表示您同意我们使用 Cookie，详情请参阅
+            <a href="privacy.html">《隐私政策》</a>。
+        </div>
+        <div class="cookie-consent__actions">
+            <button type="button" class="cookie-btn-accept" onclick="setCookieConsent('accepted')">接受</button>
+            <button type="button" class="cookie-btn-decline" onclick="setCookieConsent('declined')">拒绝</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var el = document.getElementById('cookie-consent');
+            if (!el) return;
+            var key = 'edatone_cookie_consent';
+            var state = null;
+            try { state = window.localStorage.getItem(key); } catch (e) {}
+            if (!state) { el.style.display = 'block'; }
+            window.setCookieConsent = function (value) {
+                try { window.localStorage.setItem(key, value); } catch (e) {}
+                el.style.display = 'none';
+            };
+        })();
+    </script>
+</body>
+
+</html>

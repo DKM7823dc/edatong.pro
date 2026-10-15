@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "iconfont";
+  /* Project id 4458038 */
+  src: url('iconfont.woff2') format('woff2'),
+    url('iconfont.woff') format('woff'),
+    url('iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 6px;
+}
+
+.icon-info:before {
+  content: "\e6ce";
+}
+
+.icon-details:before {
+  content: "\e669";
+}
+
+.icon-android:before {
+  content: "\e603";
+}
+
+.icon-phone:before {
+  content: "\e604";
+}
+
+.icon-search:before {
+  content: "\e635";
+}
+
+.icon-arrow-down:before {
+  content: "\e602";
+}
+
+.icon-user-info:before {
+  content: "\e663";
+}
+
+.icon-recharge:before {
+  content: "\e612";
+}
+
+.icon-check:before {
+  content: "\e82b";
+}
+
+.icon-arrow-left:before {
+  content: "\e646";
+}
+
+.icon-arrow-right:before {
+  content: "\e860";
+}
+
+.icon-mac:before {
+  content: "\e619";
+}
+
+.icon-user:before {
+  content: "\e682";
+}
+
+.icon-cart:before {
+  content: "\e75c";
+}
+
+.icon-close:before {
+  content: "\e61c";
+}
+
+.icon-download:before {
+  content: "\e63b";
+}
+
+.icon-install:before {
+  content: "\e693";
+}
+
+.icon-forgot-pass:before {
+  content: "\e67d";
+}
+
+.icon-windows:before {
+  content: "\edd4";
+}
+
+.icon-setting:before {
+  content: "\e851";
+}
+
+.icon-logout:before {
+  content: "\e60d";
+}
+
+.icon-signup:before {
+  content: "\e8ca";
+}

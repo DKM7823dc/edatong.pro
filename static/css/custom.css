@@ -1,0 +1,527 @@
+html,
+body,
+#app {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+/* 滚动条 */
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: transparent;
+}
+
+:hover::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background: var(--el-scrollbar-bg-color, var(--el-text-color-secondary));
+}
+
+/* 隐藏网页客服的默认按钮 Start */
+.yingyuchatui,
+.launchYYButtonBox,
+.launchMButtonBox {
+    display: none !important;
+}
+
+/* 隐藏网页客服的默认按钮 End */
+.transparent-header.fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1100;
+}
+
+.el-dropdown {
+    font-size: 18px;
+}
+
+.ed-btn {
+    position: relative;
+}
+
+.ed-btn .tips {
+    width: 150px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #ff5569;
+    padding: 2px 6px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    top: -26px;
+    color: #fff;
+    transform: scale(0.95);
+}
+
+.tips::before {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 4px 0;
+    border-color: #ff5569 transparent transparent;
+    position: absolute;
+    bottom: -3px;
+    left: 10px;
+    content: "";
+}
+
+.gift {
+    position: absolute;
+    width: 35px;
+    right: -20px;
+    top: 8px;
+    animation: float-bob-y-1 3s infinite linear;
+}
+
+.ed-flavour {
+    min-height: 320px;
+}
+
+.footer-item {
+    width: 20%;
+}
+
+.footer-service-item {
+    width: 28%;
+}
+
+.copyright_text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.copyright_text .copyright {
+    margin-left: 10px;
+}
+
+.el-dialog {
+    padding: 0;
+    border-radius: 4px;
+}
+
+.el-dialog .el-dialog__header {
+    text-align: left;
+    padding: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background: linear-gradient(-120deg,
+            rgba(94, 84, 253, 0.8) 1%,
+            rgba(93, 69, 229, 0.8) 100%);
+
+}
+
+.el-dialog__header .el-dialog__title {
+    color: #ffffff;
+}
+
+.el-dialog__header .el-dialog__close {
+    color: #ffffff;
+}
+
+.el-dialog__header .el-dialog__close:hover {
+    color: #833ef2;
+}
+
+.el-dialog .el-dialog__body {
+    padding: 10px 20px;
+}
+
+.el-dialog .el-dialog__footer {
+    padding: 10px;
+    background: var(--el-color-info-light-9);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.el-dialog.ad-dialog {
+    position: relative;
+}
+
+.el-dialog.ad-dialog .el-dialog__header {
+    padding: 0;
+
+}
+
+.el-dialog.ad-dialog .el-dialog__header .el-dialog__close {
+    font-size: 30px;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.el-dialog.ad-dialog .el-dialog__body {
+    padding: 0;
+}
+
+.fixed-box {
+    position: fixed;
+    right: 0;
+    bottom: 16%;
+    width: 80px;
+    height: 480px;
+    z-index: 1000;
+}
+
+.fixed-box .fixed-title {
+    font-size: 12px;
+    text-align: center;
+    background-color: #5e4ff5;
+    color: #fff;
+    padding: 6px 0;
+}
+
+.fixed-box .fixed-item {
+    width: 80px;
+    height: 80px;
+    background-color: #5e4ff5;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.fixed-box .fixed-item.hide {
+    display: none;
+}
+
+.fixed-box .fixed-item .title {
+    margin-top: 6px;
+}
+
+.fixed-box .fixed-item .service-qr-code {
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    position: absolute;
+    left: -200px;
+    top: 0;
+    transition: all 0.3s;
+    transform: scale(0, 0);
+}
+
+.fixed-box .fixed-item:hover {
+    background-color: #745efc;
+}
+
+.fixed-box .fixed-item:hover .service-icon {
+    transform: scale(1.2);
+}
+
+.fixed-box .fixed-item .service-icon.avatar {
+    border-radius: 20px;
+}
+
+.fixed-box .fixed-item:hover .service-qr-code {
+    transform: scale(1, 1);
+}
+
+.download-list li {
+    padding: 10px 2px;
+    width: 100%;
+}
+
+.download-list li .el-button {
+    width: 100%;
+}
+
+.el-dropdown .el-dropdown-link {
+    color: #ffffff;
+}
+
+.el-dropdown .el-dropdown-link:hover,
+.el-dropdown .el-dropdown-link:active,
+.el-dropdown .el-dropdown-link:focus {
+    outline: none;
+}
+
+.user-info-arrow-down {
+    margin-left: 10px;
+}
+
+.el-dropdown-menu__item {
+    padding: 10px 16px;
+    width: 140px;
+    justify-content: center;
+}
+
+.el-form-item.is-success .el-input__suffix {
+    color: #7ad6a1 !important;
+}
+
+.el-button .icon-check {
+    font-size: 12px;
+}
+
+.el-button .icon-close {
+    font-size: 10px;
+}
+
+.links>ul.service-list>li {
+    color: #409EFF;
+}
+
+.video-item {
+    width: 30%;
+}
+
+.video-item>h4 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.usdt-box .usdt-item {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.usdt-item.info {
+    color: #bebebe;
+}
+
+.usdt-item.danger {
+    color: #f00;
+}
+
+.usdt-item.price {
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+    padding: 0;
+}
+
+.usdt-item.currency {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0;
+}
+
+.usdt-item.addr {
+    font-size: 16px;
+    color: #303133;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.usdt-item.important {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.usdt-item img.icon {
+    width: 50px;
+}
+
+#qr-code {
+    text-align: center;
+}
+
+.usdt-item.timer {
+    width: 140px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.timer .value,
+.timer .label {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.timer .label span,
+.timer .value span {
+    flex: 1;
+    text-align: center;
+}
+
+.value>span {
+    color: #333;
+    font-size: 16px;
+}
+
+.timer .label span {
+    color: #999;
+}
+
+.fixed-item.online-service {
+    display: none;
+}
+
+/* ===== Cookie 使用说明横幅（左侧透明提示） ===== */
+.cookie-consent {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 1200;
+    width: 360px;
+    max-width: calc(100vw - 32px);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+    padding: 20px 20px 18px;
+}
+
+.cookie-consent__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #303133;
+    margin-bottom: 8px;
+}
+
+.cookie-consent__text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #606266;
+    margin-bottom: 14px;
+}
+
+.cookie-consent__text a {
+    color: #5e4ff5;
+    text-decoration: underline;
+}
+
+.cookie-consent__actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cookie-consent__actions button {
+    flex: 1;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 0;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.cookie-btn-accept {
+    background: #5e4ff5;
+    color: #ffffff;
+}
+
+.cookie-btn-accept:hover {
+    background: #745efc;
+}
+
+.cookie-btn-decline {
+    background: #f0f1f5;
+    color: #606266;
+}
+
+.cookie-btn-decline:hover {
+    background: #e3e5ec;
+}
+
+@media (max-width: 575px) {
+    .cookie-consent {
+        width: auto;
+        right: 16px;
+    }
+}
+
+/* ===== 页脚政策链接 ===== */
+.footer_links {
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 6px;
+}
+
+.footer_links a {
+    color: #6b6b80;
+    text-decoration: none;
+    padding: 0 12px;
+    transition: color .2s;
+}
+
+.footer_links a:hover {
+    color: #5e4ff5;
+}
+
+.footer_links .divider {
+    color: #c0c0cf;
+}
+
+/* ===== 法律条款 / 隐私政策内容页 ===== */
+.legal-wrap {
+    max-width: 860px;
+    margin: 40px auto 80px;
+    padding: 44px 48px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    color: #303133;
+}
+
+.legal-wrap h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #303133;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.legal-wrap .legal-updated {
+    text-align: center;
+    color: #909399;
+    font-size: 13px;
+    margin-bottom: 36px;
+}
+
+.legal-wrap h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #303133;
+    margin: 30px 0 12px;
+}
+
+.legal-wrap p {
+    font-size: 14px;
+    line-height: 1.95;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.legal-wrap ul {
+    padding-left: 22px;
+    margin-bottom: 12px;
+}
+
+.legal-wrap li {
+    font-size: 14px;
+    line-height: 1.95;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 767px) {
+    .legal-wrap {
+        padding: 28px 20px;
+        margin: 20px auto 60px;
+    }
+}

@@ -1,0 +1,858 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>译达通翻译，实时双向翻译，精准好用的社交媒体翻译软件，出海首选，打破语言障碍。WhatsApp翻译，Telegram翻译，Line翻译</title>
+    <meta name="description"
+        content="译达通翻译，支持Windows、macOS平台，提供精准的实时双向翻译，支持200+语种。聚合主流社交软件，Whatsapp,Telegram,Line,Zalo,Facebook,Messenger,Instagram,Twitter,Tiktok,Tinder,Discord,Google Voice,Skype等等，一对一网页客服支持，您的首选翻译软件。">
+    <meta name="keywords"
+        content="译达通 官网,译达通 首页,edatone,译达通 客户端,,译达通翻译,AI翻译算法,应用多开,Telegram聊天自动翻译,Skype聊天自动翻译,留学生必备应用,跨境电商,跨境聊天,Messenger聊天自动翻译,Zalo聊天自动翻译,Line聊天自动翻译,Instagram聊天自动翻译,WhatsApp聊天自动翻译,多语言翻译,多合一聚合便捷聊天,Telegram双向翻译,Skype双向翻译,Messenger双向翻译,Zalo双向翻译,Line双向翻译,Instagram双向翻译,WhatsApp双向翻译,多语种翻译,聚合社交应用,Telegram实时翻译,Skype实时翻译,Messenger实时翻译,Zalo实时翻译,Line实时翻译,Instagram实时翻译,WhatsApp实时翻译,实时翻译,沟通无障碍,主流软件集成,Telegram多语言翻译,Skype多语言翻译,Messenger多语言翻译,Zalo多语言翻译,Line多语言翻译,Instagram多语言翻译,WhatsApp多语言翻译,双向翻译,多账户沙盒多开,跨境翻译,whatsapp,telegram,line,zalo,facebook,messenger,instagram,twitter,tiktok,tinder,Discord,google voice,skype,pingme,badoo,bumble,quora,textnow,textme,海外党,海外华人,出海必备">
+    <meta name="og:title" content="译达通实时翻译软件">
+    <meta name="og:description"
+        content="译达通翻译，支持Windows、macOS平台，提供精准的实时双向翻译，支持200+语种。聚合主流社交软件，Whatsapp,Telegram,Line,Zalo,Facebook,Messenger,Instagram,Twitter,Tiktok,Tinder,Discord,Google Voice,Skype等等，一对一网页客服支持，您的首选翻译软件。">
+    <meta name="og:image" content="static/images/icon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/icon.ico">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/iconfont/iconfont.css" />
+    <link rel="stylesheet" href="static/css/animate.min.css" />
+    <link rel="stylesheet" href="static/css/meanmenu.css" />
+    <link rel="stylesheet" href="static/css/slick.css" />
+    <link rel="stylesheet" href="static/plugins/element-plus/2.6.3/css/index.css" />
+    <link rel="stylesheet" href="static/css/style.css?v=1.9.2">
+    <link rel="stylesheet" href="static/css/custom.css?v=1.9.2" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-814658473"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-814658473');
+    </script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- HEADER START -->
+        <header>
+            <div id="header-sticky" class="header-area header-area-white transparent-header pb-10 fixed" :style="{background:
+        scrollTop >= 2
+          ? 'linear-gradient(-120deg, #5e54fd 1%, #5d45e5 100%)'
+          : 'none'}">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-10 d-flex align-items-center">
+                            <div class="logo">
+                                <a href="index.html"><img src="static/images/logo_dark.png" width="90" /></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-7 col-8 d-none d-md-block">
+                            <template v-if="userInfo.token && userInfo.userData?.name">
+                                <div class="f-right d-none d-sm-none d-md-block d-md-none d-lg-block"
+                                    style="padding-top: 28px">
+                                    <el-dropdown @command="handleCommand" popper-class="user-info-popper">
+                                        <span class="el-dropdown-link">
+                                            <i class="iconfont icon-user-info"></i>
+                                            {{ userInfo.userData.name}}<i
+                                                class="iconfont icon-arrow-down user-info-arrow-down"></i>
+                                        </span>
+                                        <template #dropdown>
+                                            <el-dropdown-menu>
+                                                <el-dropdown-item command="user"><i
+                                                        class="iconfont icon-user-info"></i>个人中心</el-dropdown-item>
+                                                <el-dropdown-item command="logout"><i
+                                                        class="iconfont icon-logout"></i>退出登录</el-dropdown-item>
+                                            </el-dropdown-menu>
+                                        </template>
+                                    </el-dropdown>
+                                </div>
+                            </template>
+                            <template v-else>
+                                <div class="f-right d-none d-sm-none d-md-block d-md-none d-lg-block"
+                                    style="padding-top: 22px">
+                                    <a class="btn ed-btn btn-white" href="javascript:void(0)"
+                                        data-url="signup.html?path=index.html" data-name="topmenu-signup"
+                                        data-content="顶部菜单-免费注册"><i class="iconfont icon-signup"></i>免费注册
+                                        <span class="tips">新用户赠送30000字符</span>
+                                    </a>
+                                    <a class="btn ed-btn btn-white" href="javascript:void(0)"
+                                        data-url="login.html?path=index.html" data-name="topmenu-login"
+                                        data-content="顶部菜单-立即登录" style="margin-left: 10px"><i
+                                            class="iconfont icon-user"></i>立即登录</a>
+                                </div>
+                            </template>
+                            <div class="main-menu colormenu d-block">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a href="javascript:void(0)" data-url="index.html" data-name="topmenu-index"
+                                                data-content="顶部菜单-首页">首页</a></li>
+                                        <li>
+                                            <a href="javascript:void(0)" data-url="download.html"
+                                                data-name="topmenu-download" data-content="顶部菜单-客户端下载">客户端下载</a>
+                                        </li>
+                                        <!--<li>
+                                            <a href="javascript:void(0)" data-url="product.html"
+                                                data-name="topmenu-product" data-content="顶部菜单-产品展示">产品展示</a>
+                                        </li> -->
+                                        <li>
+                                            <a href="javascript:void(0)" data-url="packages.html"
+                                                data-name="topmenu-packages" data-content="顶部菜单-套餐购买">套餐购买<img
+                                                    class="gift" src="static/images/gift.png" /></a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://edatone.com/helps"
+                                                data-name="topmenu-helps" data-content="顶部菜单-使用帮助">使用帮助</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-2 col-md-1">
+                            <div class="side-menu-icon bar-two d-lg-none text-end">
+                                <button class="side-toggle"><i class="far fa-bars"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- HEADER END -->
+        <div class="fix">
+            <div class="side-info">
+                <button class="side-info-close"><i class="fal fa-times"></i></button>
+                <div class="side-info-content">
+                    <div class="mobile-menu"></div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-overlay"></div>
+        <main>
+            <!-- === SLIDER AREA START === -->
+            <div class="slider_2">
+                <div class="slider_2_shapes">
+                    <img class="h2_shape4" src="static/picture/home_2_shape4.png" alt="" />
+                    <img class="h2_sh_1 d-none d-sm-block" src="static/picture/bordershape.png" alt="" />
+                    <img class="h2_sh_2 d-none d-sm-block" src="static/picture/home2shape2.png" alt="" />
+                    <img class="h2_sh_3 d-none d-sm-block" src="static/picture/h2shap3.png" alt="" />
+                    <img class="h2_sh_4 d-none d-sm-block" src="static/picture/h2shape2.png" alt="" />
+                    <img class="h2_sh_5 d-none d-sm-block" src="static/picture/home_2_shape.png" alt="" />
+                    <img class="h2_sh_6 d-none d-sm-block" src="static/picture/home_2_shape7.png" alt="" />
+                    <img class="h2_sh_7 d-none d-sm-block" src="static/picture/border2shape.png" alt="" />
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 wow zoomIn" data-wow-duration="1s" data-wow-delay=".2s"
+                            style="z-index: 1000;">
+                            <div class="slider_2__content">
+                                <h1 class="home2_title hero-title">译达通翻译</h1>
+                                <h1 class="home2_title hero-title">流畅、智能、安全</h1>
+                                <p>
+                                    200+语种支持，6+翻译渠道，聚合全球主流社交软件<br />持续优化，分布式架构，带来流畅的用户体验
+                                </p>
+                                <a href="javascript:void(0)" data-url="download.html"
+                                    class="tp_white_border ed-btn sign-btn" data-name="index-try"
+                                    data-content="首页-免费试用"><i class="iconfont icon-download"></i>免费试用</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="slider_2_image">
+                                <div class="home2_shapes">
+                                    <img class="h2_love" src="static/picture/loveshape.png" alt="loveShape" />
+                                </div>
+                                <img class="H2_iphonex d-sm-none d-md-block d-none d-sm-block"
+                                    src="static/images/index_01.png" width="1000px" alt="译达通客户端" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === SLIDER AREA END === -->
+
+            <!-- === HOME-2 APP CHOOSE START === -->
+            <div class="app_choose pt-80 mt-120 pb-60">
+                <div class="container-fluidd">
+                    <div class="section_title_wrapper text-center pb-55 wow fadeInDown" data-wow-duration="1s"
+                        data-wow-delay=".2s">
+                        <h2 class="section-title section-title-large">
+                            支持全球热门聊天应用，多种专业翻译渠道
+                        </h2>
+                        <p style="text-align: center">
+                            一键翻译各国语言，提高沟通效率，支持全球200多种语言，对接6大翻译渠道。
+                        </p>
+                        <p style="text-align: center">
+                            支持全球主流社交软件WhatsApp、Telegram、Line、Skype、Instagram、Twitter、Facebook等。
+                        </p>
+                    </div>
+                    <div class="choose_active wow fadeInRight" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div id="apps-list">
+                            <ul>
+                                <li>
+                                    <img src="static/picture/app_icon/facebook.png"
+                                        alt="Facebook" /><span>Facebook</span>
+                                </li>
+                                <li>
+                                    <img src="static/picture/app_icon/line.png" alt="Line" /><span>Line</span>
+                                </li>
+                                <li>
+                                    <img src="static/picture/app_icon/whatsapp.png"
+                                        alt="WhatsApp" /><span>WhatsApp</span>
+                                </li>
+                                <li>
+                                    <img src="static/picture/app_icon/messenger.png"
+                                        alt="Messenger" /><span>Messenger</span>
+                                </li>
+                                <li>
+                                    <img src="static/picture/app_icon/skype.png" alt="Skype" /><span>Skype
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="static/picture/app_icon/telegram.png"
+                                        alt="Telegram" /><span>Telegram</span>
+                                </li>
+                                <li>
+                                    <img src="static/picture/app_icon/twitter.png" alt="Twitter" /><span>Twitter</span>
+                                </li>
+                                <li>
+                                    <img src="static/picture/app_icon/tiktok.png" alt="Tiktok" /><span>Tiktok</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === HOME-2 APP CHOOSE END === -->
+
+            <!-- === HOME-2 FETURES AREA START === -->
+            <div class="fetures2 pt-115 pb-90">
+                <div class="container">
+                    <div class="section_title_wrapper mb-60 text-center fetures2">
+                        <h2 class="section-title">我们的优势</h2>
+                        <p>
+                            实时双向翻译，AI算法加持，分布式全球部署，实现99.99%精准度，提升沟通体验
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="featurebox2 mb-30 wow fadeInLeft ed-flavour" data-wow-duration="1.5s"
+                                data-wow-delay=".3s">
+                                <div class="featurebox2__img">
+                                    <img src="static/images/feature/trans.png" alt="精准翻译" width="30" />
+                                </div>
+                                <div class="featurebox2__content">
+                                    <h3 class="fea-title">精准翻译</h3>
+                                    <p>
+                                        7大主流翻译引擎, 精准的翻译使您能够快速准确地沟通,
+                                        无论是旅行、工作还是学习。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="featurebox2 mb-30 wow fadeInLeft ed-flavour" data-wow-duration="1.2s"
+                                data-wow-delay=".2s">
+                                <div class="featurebox2__img gradientorange">
+                                    <img src="static/images/feature/fast.png" alt="快速响应" width="30" />
+                                </div>
+                                <div class="featurebox2__content">
+                                    <h3 class="fea-title">快速响应</h3>
+                                    <p>
+                                        分布式架构, 毫秒级延迟,
+                                        响应迅速，流畅的用户体验让您能够轻松地与不同语言的朋友交流。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="featurebox2 mb-30 wow fadeInRight ed-flavour" data-wow-duration="1.2s"
+                                data-wow-delay=".2s">
+                                <div class="featurebox2__img gradientbrwon">
+                                    <img src="static/images/feature/operate.png" alt="操作便捷" width="30" />
+                                </div>
+                                <div class="featurebox2__content">
+                                    <h3 class="fea-title">操作便捷</h3>
+                                    <p>
+                                        直观的界面和简单的操作, 无论您是新手还是有经验, 都能轻松上手。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="featurebox2 mb-30 wow fadeInRight ed-flavour" data-wow-duration="1.5s"
+                                data-wow-delay=".3s">
+                                <div class="featurebox2__img gradientgreen">
+                                    <img src="static/images/feature/safety.png" alt="安全可靠" width="30" />
+                                </div>
+                                <div class="featurebox2__content">
+                                    <h3 class="fea-title">安全可靠</h3>
+                                    <p>
+                                        采用了先进的加密技术和严格的隐私政策, 保护用户的隐私和数据安全。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === HOME-2 FETURES AREA END === -->
+
+            <!-- === HOME-2 APP DETAILS START === -->
+            <div class="app_details_h2 pt-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="app_images_h2 wow zoomIn" data-wow-duration="1.5s" data-wow-delay=".4s">
+                                <img class="bgphone d-none d-sm-block" src="static/picture/bgphone.png" alt="译达通" />
+                                <div class="shape_design_h2">
+                                    <img class="home2FlatIphone_h2 d-none d-sm-block" src="static/images/index_02.png"
+                                        alt="译达通" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 d-flex align-items-center">
+                            <div class="details_content_h2 pl-100 wow fadeInUp" data-wow-duration="1.5s"
+                                data-wow-delay=".2s">
+                                <h2 class="section-title mb-20">多平台畅聊，翻译更精准</h2>
+                                <p>
+                                    极速稳定不卡顿，完美支持Windows、macOS多平台使用，服务器智能分流，保证用户始终处于最佳线路。
+                                </p>
+                                <div class="details_btn_h2 pt-30"></div>
+                                <a class="cta_btn_2 ed-btn sign-btn" href="javascript:void(0)" data-url="download.html"
+                                    data-name="index-download" data-content="首页-立即下载"><i
+                                        class="iconfont icon-download"></i>立即下载</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === HOME-2 APP DETAILS END === -->
+
+            <!-- === HOME-2 PAY AREA START  === -->
+            <div class="pay_area mb-75">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="details_content_h2 pt-200 wow fadeInUp" data-wow-duration="1.5s"
+                                data-wow-delay=".2s">
+                                <h2 class="section-title mb-20 pt-50">沟通便捷，工作生活好助手</h2>
+                                <p>支持快捷回复、子账号管理，操作更简便，翻译更加人性化。</p>
+                                <div class="details_btn_h2 pt-30">
+                                </div>
+                                <a class="cta_btn_2 ed-btn sign-btn" href="javascript:void(0)" data-url="signup.html"
+                                    data-name="index-signup" data-content="首页-免费注册"><i
+                                        class="iconfont icon-signup"></i>免费注册</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="Pay_images pt-130 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
+                                <img class="pay_shape1 d-none d-sm-block" src="static/images/index_06.jpeg"
+                                    alt="pay_image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === HOME-2 PAY AREA END  === -->
+
+            <!-- === HOME-2 PURCHES AREA START  === -->
+            <div class="purches-area pt-75">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                            data-wow-delay=".2s">
+                            <div class="section_title_wrapper purches">
+                                <h2 class="section-title purches_heading">客户端下载</h2>
+                                <p>
+                                    极速稳定不卡顿，完美支持Windows、macOS多平台使用，服务器智能分流，保证用户始终处于最佳线路。
+                                </p>
+                                <div class="row g-0 pt-60" style="text-align: left">
+                                    <!-- <div class="col-xl-6 col-sm-6" v-for="(config, index) in downloadConfigs"
+                                        :key="index">
+                                        <template v-if="config.infos?.length > 0">
+                                            <template v-if="config.infos?.length > 1">
+                                                <el-popover placement="bottom-start" :width="240" trigger="hover">
+                                                    <ul class="download-list">
+                                                        <li v-for="info in config.infos">
+                                                            <el-button type="primary" link
+                                                                @click="handleDownload(info)">{{ info.name
+                                                                }}</el-button>
+                                                        </li>
+                                                    </ul>
+                                                    <template #reference>
+                                                        <a class="tp_white_border ed-btn download-btn"><i
+                                                                :class="config.icon"></i>{{ config.title
+                                                            }}<i class="iconfont icon-arrow-down arrow-down"></i></a>
+                                                    </template>
+                                                </el-popover>
+                                            </template>
+                                            <a v-else class="tp_white_border ed-btn download-btn"
+                                                @click="handleDownload(config.infos[0])"><i :class="config.icon"></i>{{
+                                                config.title }}</a>
+                                        </template>
+                                    </div> -->
+                                    <a href="javascript:void(0)" data-url="download.html" style="width: 200px;"
+                                        class="tp_white_border ed-btn sign-btn" data-name="index-try"
+                                        data-content="首页-免费试用"><i class="iconfont icon-download"></i>免费下载</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInRight" data-wow-duration="1.5s"
+                            data-wow-delay=".2s">
+                            <div class="pay_image d-sm-none d-md-block d-none d-sm-block">
+                                <img src="static/images/index_04.png" alt="pay_image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === HOME-2 PURCHES AREA END  === -->
+
+            <!-- === HOME-2 USER EXPERIENCE AREA START  === -->
+            <div class="experience_area">
+                <div class="container">
+                    <div class="section_title_wrapper text-center mb-70 mt-50">
+                        <h2 class="section-title">丰富的翻译渠道</h2>
+                        <p style="text-align: center">
+                            支持市面上主流的六大翻译渠道，提供用户更多更全面的选择
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="1.5s"
+                            data-wow-delay=".2s">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <img src="static/picture/trans_icon/google.png" alt="service_image" />
+                                </div>
+                                <div class="service__content">
+                                    <h4>谷歌翻译</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInDown" data-wow-duration="1.5s"
+                            data-wow-delay=".2s">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <img src="static/picture/trans_icon/deepl.png" alt="service_image" />
+                                </div>
+                                <div class="service__content">
+                                    <h4>Deepl</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-duration="1.5s"
+                            data-wow-delay=".2s">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <img src="static/picture/trans_icon/baidu.png" alt="service_image" />
+                                </div>
+                                <div class="service__content">
+                                    <h4>百度翻译</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="1.5s"
+                            data-wow-delay=".2s">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <img src="static/picture/trans_icon/tencent.png" alt="service_image" />
+                                </div>
+                                <div class="service__content">
+                                    <h4>腾讯翻译</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                            data-wow-delay=".2s">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <img src="static/picture/trans_icon/youdao.png" alt="service_image" />
+                                </div>
+                                <div class="service__content">
+                                    <h4>有道翻译</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInRight" data-wow-duration="1.5s"
+                            data-wow-delay=".2s">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <img src="static/picture/trans_icon/bytedance.png" alt="service_image" />
+                                </div>
+                                <div class="service__content">
+                                    <h4>字节跳动</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === HOME-2 USER EXPERIENCE AREA END  === -->
+
+            <!-- === HOME-2 TESTIMONIAL AREA START  === -->
+            <div class="testimonial-area testimonial2 pt-100 pb-100 fix">
+                <div class="testimonial_person d-md-none d-lg-block d-lg-none d-xl-block d-sm-none">
+                    <img class="testimonial1_h2 d-none d-sm-block" src="static/picture/1.png" alt="" />
+                    <img class="testimonial2_h2 d-none d-sm-block" src="static/picture/2.png" alt="" />
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-10 wow zoomIn" data-wow-duration="1.5s" data-wow-delay=".2s">
+                            <el-carousel :interval="4000" height="400px">
+                                <el-carousel-item>
+                                    <div class="testimonial-items">
+                                        <div class="items">
+                                            <div class="clients_meta">
+                                                <div class="clients_image">
+                                                    <img src="static/picture/avatar1.png" alt="clients_image" />
+                                                </div>
+                                            </div>
+                                            <div class="clients_info-two">
+                                                <p>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近我找到了一款真是太实用的工具，那就是译达通翻译软件。我平常需要跟不同国家的朋友、同事和客户交流，这款软件简直就是我的得力助手。<br />
+                                                    它支持200+种语言，完全能覆盖我的翻译需求！无论我遇到哪种语言，都能轻松翻译，再也不用担心语言障碍。<br />
+                                                    其次，它可以在非常多的社交媒体软件上使用。我常常需要在社交媒体上与国外客户交流，有了这个软件，沟通变得非常方便。<br />
+                                                    最重要的是，翻译质量可靠，有非常丰富的翻译渠道。从我的使用经验来说，不同翻译渠道差异还是不小的，更多的翻译渠道，这个我很满意！软件使用体验也非常流畅！<br />
+                                                    译达通翻译软件是我使用过的最实用的翻译工具之一，点赞！！
+                                                </p>
+                                                <div class="clients_info info2">
+                                                    <!--                    <h4>粱建邦</h4>-->
+                                                    <span>⭐️⭐️⭐️⭐️⭐️</span>
+                                                </div>
+                                            </div>
+                                            <div class="clients_meta">
+                                                <div class="clients_image" style="width: 60px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </el-carousel-item>
+                                <el-carousel-item>
+                                    <div class="testimonial-items">
+                                        <div class="items">
+                                            <div class="clients_meta">
+                                                <div class="clients_image">
+                                                    <img src="static/picture/avatar2.png" alt="clients_image" />
+                                                </div>
+                                            </div>
+                                            <div class="clients_info-two">
+                                                <p>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为一名跨境从业者，我认为译达通翻译软件非常好用。<br />它不仅支持超过200种语言，还有一个让我非常喜欢的特点：实时社交媒体翻译！
+                                                    这个特点简直是太棒了。<br />&nbsp;&nbsp;&nbsp;&nbsp;在跨境电商业务中，与客户和供应商在社交媒体上进行即时互动至关重要。而有了译达通翻译软件，我可以轻松地在各种社交平台上与他们交流，无论他们使用的是哪种语言。
+                                                    无论是回复客户的留言，还是发布产品信息。我都可以立即将内容翻译成他们能够理解的语言。这不仅节省了我大量的时间，还让我能够更加紧密地与全球客户和供应商建立联系。<br />&nbsp;&nbsp;&nbsp;&nbsp;对了，夸一夸他们家的AI助手，真是非常好用！
+                                                    <br />&nbsp;&nbsp;&nbsp;&nbsp;我强烈推荐你试试译达通翻译软件！
+                                                </p>
+                                                <div class="clients_info info2">
+                                                    <!--                    <h4>Nathaneal Down</h4>-->
+                                                    <span>⭐️⭐️⭐️⭐️⭐️</span>
+                                                </div>
+                                            </div>
+                                            <div class="clients_meta">
+                                                <div class="clients_image" style="width: 60px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </el-carousel-item>
+                                <el-carousel-item>
+                                    <div class="testimonial-items">
+                                        <div class="items">
+                                            <div class="clients_meta">
+                                                <div class="clients_image">
+                                                    <img src="static/picture/avatar3.png" alt="clients_image" />
+                                                </div>
+                                            </div>
+                                            <div class="clients_info-two">
+                                                <p>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In my daily
+                                                    office endeavors, edatone translation software has emerged
+                                                    as an essential companion! <br />Beyond its support for
+                                                    major languages, it seamlessly manages diverse minor
+                                                    languages. Whether it's navigating emails, documents, or
+                                                    conversing with global colleagues, it furnishes precise,
+                                                    seamless translations, simplifying the complexities of
+                                                    multilingual communication. <br />Undoubtedly, it's an
+                                                    indispensable asset in any office setting!
+                                                </p>
+                                                <div class="clients_info info2">
+                                                    <!--                    <h4>Nathaneal Down</h4>-->
+                                                    <span>⭐️⭐️⭐️⭐️⭐️</span>
+                                                </div>
+                                            </div>
+                                            <div class="clients_meta">
+                                                <div class="clients_image" style="width: 60px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </el-carousel-item>
+                            </el-carousel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === HOME-2 TESTIMONIAL AREA END  === -->
+
+            <!-- === HOME-2 CTA AREA START  === -->
+            <div class="cta_area pt-100 pb-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="cta wow zoomIn" data-wow-duration="1.5s" data-wow-delay=".2s">
+                                <h2 class="sub-title">
+                                    免费领取<span style="color: #833ef2">30000</span>字符，立即体验
+                                </h2>
+                                <p>更多套餐，任由您选择</p>
+                                <div class="cta__freeBtn">
+                                    <a class="cta_btn_2 ed-btn sign-btn" href="javascript:void(0)"
+                                        data-url="signup.html" data-name="index-bottom-signup"
+                                        data-content="首页-底部-立即注册"><i class="iconfont icon-signup"></i>立即注册</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <el-dialog style="width: auto; height: auto;" v-model="adVisible" align-center :close-on-click-modal="false"
+                :close-on-press-escape="false" class="ad-dialog">
+                <a href="packages.html" @click="adVisible = false">
+                    <img :src="adPath" :style="{maxHeight: maxHeight}" style="width: 1000px;" /></a>
+            </el-dialog>
+            <!-- === HOME-2 CTA AREA END  === -->
+            <el-dialog width="500" v-model="tipsVisible" draggable align-center title="温馨提示">
+                <p style="text-align: left;">提示：若您在安装客户端的过程中电脑系统跳出<span style="color: #E6A23C;">“风险提示”</span>，请您点击<span
+                        style="color: #409EFF;">“更多信息→仍要运行/允许运行/允许安装”</span>。译达通客户端不会对您的系统带来任何安全风险，请知悉。
+                </p>
+            </el-dialog>
+        </main>
+        <footer>
+            <!-- FOOTER START -->
+            <div class="footer-area padding-remove footertext-hover">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-item">
+                            <div class="footer_logo wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
+                                <img src="static/images/logo.png" alt="logo" width="90" />
+                            </div>
+                        </div>
+                        <div class="footer-item">
+                            <div class="footer_widget_design wow fadeInUp" data-wow-duration="1.5s"
+                                data-wow-delay=".2s">
+                                <div class="link_heading">
+                                    <h3 class="link_heading">快速链接</h3>
+                                </div>
+                                <div class="links">
+                                    <ul>
+                                        <li><a href="index.html">网站首页</a></li>
+                                        <li><a href="login.html">用户登录</a></li>
+                                        <li><a href="signup.html">用户注册</a></li>
+                                        <li><a href="recharge.html">套餐购买</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-item">
+                            <div class="footer_widget_design wow fadeInUp" data-wow-duration="1.5s"
+                                data-wow-delay=".2s">
+                                <div class="link_heading">
+                                    <h3 class="link_heading">帮助中心</h3>
+                                </div>
+                                <div class="links">
+                                    <ul>
+                                        <li>
+                                            <a href="https://edatone.com/helps/docs/help/getting-started"
+                                                target="_blank">快速开始</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://edatone.com/helps/docs/help/price" target="_blank">套餐介绍</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://edatone.com/helps/docs/help/faq" target="_blank">常见问题</a>
+                                        </li>
+                                        <li>
+                                            <a href="download-center.html">下载中心</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://edatone.com/helps/docs/help/about" target="_blank">关于我们</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-item">
+                            <div class="footer_widget_design fixwidth wow fadeInUp" data-wow-duration="1.5s"
+                                data-wow-delay=".2s">
+                                <div class="link_heading">
+                                    <h3 class="link_heading">服务支持</h3>
+                                </div>
+                                <div class="links">
+                                    <ul>
+                                        <li><a href="user.html">会员中心</a></li>
+                                        <li><a href="resetPass.html">忘记密码</a></li>
+                                        <li>
+                                            <a href="javascript:void(0)"
+                                                onclick="Edatone.toUserCenter('subUser.html')">字符分配</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://edatone.com/helps" target="_blank">帮助中心</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-item">
+                            <div class="footer_widget_design wow fadeInUp" data-wow-duration="1.5s"
+                                data-wow-delay=".2s">
+                                <div class="link_heading">
+                                    <h3 class="link_heading linkspecail">
+                                        <img src="static/images/service/telegram-server.png" width="22" />&nbsp;联系我们
+                                    </h3>
+                                </div>
+                                <div class="links special_widget_tp">
+                                    <ul class="service-list">
+                                        <li>
+                                            <el-tooltip effect="dark" content="TG客服佳佳">
+                                                <a href="https://telegram.me/edatone_jiajia" target="_blank"
+                                                    data-name="bottom-tg-service" data-content="底部-TG客服">
+                                                    @edatone_jiajia
+                                                </a>
+                                            </el-tooltip>
+                                        </li>
+                                        <li>
+                                            <el-tooltip effect="dark" content="TG客服茜茜">
+                                                <a href="https://telegram.me/edatone_xi" target="_blank"
+                                                    data-name="bottom-tg-service" data-content="底部-TG客服">
+                                                    @edatone_xi
+                                                </a>
+                                            </el-tooltip>
+                                        </li>
+                                        
+                                        <li>
+                                            <el-tooltip effect="dark" content="TG客服晓晓">
+                                                <a href="https://telegram.me/edatone_xiaoge" target="_blank"
+                                                    data-name="bottom-tg-service" data-content="底部-TG客服">
+                                                    @edatone_xiaoge
+                                                </a>
+                                            </el-tooltip>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom pt-60 pb-15">
+                    <div class="container tp-border">
+                        <div class="row align-items-center">
+                            <div class="copyright_text pt-20">
+                                <!-- <a href="http://beian.miit.gov.cn" target="_blank">湘ICP备2024053125号-1</a> -->
+                                <span class="copyright">Copyright &copy; 2024.edatone.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FOOTER END -->
+        </footer>
+        <div class="fixed-box">
+            <div class="fixed-title">24小时在线</div>
+            <div class="fixed-item online-service" onclick="Edatone.toggleService()" data-name="fixed-online-service"
+                data-content="悬浮层-网页客服">
+                <img src="static/images/service/online_service.png" width="36" height="36" class="service-icon" />
+                <div class="title">网页客服</div>
+            </div>
+            <div class="fixed-item" onclick="Edatone.toTelegram('https://telegram.me/edatone_jiajia')"
+                data-name="fixed-tg-service" data-content="悬浮层-TG客服">
+                <img src="static/images/service/avatar/jiajia.jpg" width="36" height="36" class="service-icon avatar" />
+                <div class="title">TG客服佳佳</div>
+            </div>
+            <div class="fixed-item" onclick="Edatone.toTelegram('http://t.me/edatone_xiaoge')"
+                data-name="fixed-tg-service" data-content="悬浮层-TG客服">
+                <img src="static/images/service/avatar/xiaoxiao.jpg" width="36" height="36"
+                    class="service-icon avatar" />
+                <div class="title">TG客服晓晓</div>
+            </div>
+            <div class="fixed-item" onclick="Edatone.toTelegram('https://telegram.me/edatone_xi')" data-name="fixed-tg-service"
+                data-content="悬浮层-TG客服">
+                <img src="static/images/service/avatar/xixi.jpg" width="36" height="36" class="service-icon avatar" />
+                <div class="title">TG客服茜茜</div>
+            </div>
+            <div class="fixed-item" onclick="Edatone.toPage('signup.html')"
+                v-if="!userInfo.token || !userInfo.userData?.name" data-name="fixed-login" data-content="悬浮层-注册登录">
+                <img src="static/images/user.png" width="36" height="36" class="service-icon" />
+                <div class="title">注册登录</div>
+            </div>
+            <div class="fixed-item" onclick="Edatone.scrollToTop()" v-show="scrollTop > 300" data-name="fixed-to-top"
+                data-content="悬浮层-回到顶部">
+                <img src="static/images/top.png" width="36" height="36" class="service-icon" />
+                <div class="title">回到顶部</div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/jquery-1.12.4.min.js"></script>
+    <!-- <script src="static/js/bootstrap.min.js"></script> -->
+    <!-- <script src="static/js/one-page-nav-min.js"></script> -->
+    <!-- <script src="static/js/slick.min.js"></script> -->
+    <script src="static/js/jquery.meanmenu.min.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <!-- <script src="static/plugins/element-plus/2.6.3/locale/zh-cn.js"></script> -->
+    <!-- <script src="static/plugins/js-yaml/4.1.0/js-yaml.js"></script> -->
+    <script>
+        (function () {
+            function isLegacyBrowser() {
+                return !window.Promise ||
+                    !window.Symbol ||
+                    !window.Proxy ||
+                    !Object.assign ||
+                    !Array.prototype.includes ||
+                    !window.URL ||
+                    !window.URLSearchParams ||
+                    !window.crypto ||
+                    !window.crypto.getRandomValues;
+            }
+
+            function showLegacyMessage() {
+                var app = document.getElementById("app");
+                if (!app) return;
+                app.innerHTML = '<div style="max-width: 720px; margin: 120px auto; padding: 32px; text-align: center; font-size: 16px; line-height: 1.8; color: #333;">' +
+                    '<h2 style="font-size: 24px; margin-bottom: 16px;">当前浏览器版本过低</h2>' +
+                    '<p>译达通官网需要使用 Chrome、Edge、Safari、Firefox 等现代浏览器访问。</p>' +
+                    '<p>如果您正在使用 IE 或浏览器兼容模式，请切换到极速模式后重新打开。</p>' +
+                    '</div>';
+            }
+
+            function loadScript(src, callback) {
+                var script = document.createElement("script");
+                script.src = src;
+                script.onload = callback;
+                document.body.appendChild(script);
+            }
+
+            function loadScripts(scripts, index) {
+                if (index >= scripts.length) return;
+                loadScript(scripts[index], function () {
+                    loadScripts(scripts, index + 1);
+                });
+            }
+
+            if (isLegacyBrowser()) {
+                showLegacyMessage();
+                return;
+            }
+
+            loadScripts([
+                "static/plugins/vue/3.4.21/vue.global.prod.js",
+                "static/plugins/element-plus/2.6.3/js/index.full.js",
+                "static/plugins/axios/1.6.8/axios.min.js",
+                "static/js/main.js",
+                "static/script/request.js?v=1.9.2",
+                "static/script/api.js?v=1.9.2",
+                "static/script/url-safety.js?v=1.9.3",
+                "static/script/edatone.js?v=1.9.2",
+                "static/script/index.js?v=1.9.3"
+            ], 0);
+        })();
+    </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"130682bb092d482dad0b16a8b06efd3a","spa":2}' crossorigin="anonymous"></script>
+</body>
+
+</html>
