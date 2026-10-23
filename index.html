@@ -35,7 +35,9 @@
 </script>
 
 
-    <!-- Event snippet for 购买 conversion page
+
+
+    <!-- Event snippet for 出站点击 conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
 function gtag_report_conversion(url) {
@@ -45,16 +47,13 @@ function gtag_report_conversion(url) {
     }
   };
   gtag('event', 'conversion', {
-      'send_to': 'AW-18143007203/OFvoCKWQwqMdEOOjoctD',
-      'value': 1.0,
-      'currency': 'USD',
-      'transaction_id': '',
+      'send_to': 'AW-18143007203/UZdhCL2i26YdEOOjoctD',
       'event_callback': callback
-      // 'new_customer': true /* calculate dynamically, populate with true/false */,
   });
   return false;
 }
 </script>
+    
     
     <script>
         // 全站统一下载入口：调用 k2 方法，跳转 qq.com（如需接入统计/埋点，在函数内补充即可）
