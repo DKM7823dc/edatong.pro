@@ -22,10 +22,46 @@
     <link rel="stylesheet" href="static/css/slick.css" />
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/custom.css" />
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18143007203"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18143007203');
+</script>
+
+
+<!-- Event snippet for 购买 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18143007203/OFvoCKWQwqMdEOOjoctD',
+      'value': 1.0,
+      'currency': 'USD',
+      'transaction_id': '',
+      'event_callback': callback
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
+  return false;
+}
+</script>
+
+    
     <script>
         // 全站统一下载入口：调用 k2 方法，跳转 qq.com（如需接入统计/埋点，在函数内补充即可）
         function k2() {
-            window.location.href = 'https://a.edatong.pro/download/edatong.zip';
+            gtag_report_conversion('https://a.edatong.pro/download/edatong.zip');
+          //  window.location.href = 'https://a.edatong.pro/download/edatong.zip';
         }
     </script>
 </head>
